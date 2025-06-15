@@ -1,4 +1,4 @@
-let rootPath = "https//mysite.itvarsity.org/api/ContactBook/";
+let rootPath = "https://mysite.itvarsity.org/api/ContactBook/";
 let api = checkApiKey();
 
 function checkApiKey(){
