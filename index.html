@@ -38,8 +38,15 @@
                     document.getElementById("table").innerHTML = output
             }
             
-            documets.getElementById("refresh").addEventListener('click', fetchContacts);
+            //To refresh the page and display newly added contacts
+            document.getElementById("refresh").addEventListener('click', fetchContacts);
+            document.getElementById("addContact").addEventListener('click', fetchContacts);
+
+            function addContact(){
+                window.open("add-contact.html", "_self");
+            }
             
+
         </script>
     </body>
 </html>
