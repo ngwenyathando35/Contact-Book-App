@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <title>Edit Contact</title>
     </head>
-    <body>
+    <body onload="getContact()">
         <div id="avatarImage"></div>
         <form id="editForm">
             <label for="firstname">First name</label>
@@ -26,6 +26,7 @@
 
         <script src="config.js"></script>
         <script>
+            document.getElementById("homeLink").addEventListener('click', homeLink);
             var id = getId();
             console.log("The id is " + id);
             function getId(){
@@ -33,6 +34,20 @@
                 var pos = url.search("=");
                 var id = url.slice(pos + 1);
                 return id;
+            }
+
+            function getContact(){
+                fetch(rootPath + 'controller/get-contacts/?id=' + id)
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(data){
+                    console.log(data);
+                })
+            }
+
+            function homeLink(){
+                window.open("index.html", "_self")
             }
         </script>
     </body>
