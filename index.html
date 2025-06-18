@@ -11,6 +11,7 @@
 
         <script src="config.js"></script>
         <script>
+
             //to fetch api
             function fetchContacts(){
                 fetch(rootPath + "controller/get-contacts/").then(function(response){
@@ -39,14 +40,14 @@
             
             //To refresh the page and display newly added contacts
             document.getElementById("refresh").addEventListener('click', fetchContacts);
-            document.getElementById("addContact").addEventListener('click', fetchContacts);
+            document.getElementById("addContact").addEventListener('click', addContact);
 
             function addContact(){
                 window.open("add-contact.html", "_self");
             }
             
             function editContact(id){
-                    window.open("edit-contact.html?id=" + id, "_self");
+                window.open("edit-contact.html?id=" + id, "_self");
             }
 
         </script>
